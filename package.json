@@ -1,0 +1,28 @@
+{
+  "name": "commp229-f2022-week2-lab-822955068",
+  "version": "0.0.1",
+  "description": "My Test App",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daroshIrani/COMMP229-F2022-WEEK2-LAB-822955068.git"
+  },
+  "author": "Darosh Irani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daroshIrani/COMMP229-F2022-WEEK2-LAB-822955068/issues"
+  },
+  "homepage": "https://github.com/daroshIrani/COMMP229-F2022-WEEK2-LAB-822955068#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0"
+  }
+}
