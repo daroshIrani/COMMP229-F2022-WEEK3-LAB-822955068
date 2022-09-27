@@ -4,7 +4,6 @@
 import express from 'express';// imports full content of express into the .js file (do not use ***{express}***)
 import logger from 'morgan';
 import session from 'express-session';
-import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
 //ES Modules fix for __dirname ******///////
@@ -59,7 +58,7 @@ const app = express();//assgning its fucntionailty to tha app constant so we can
 // app.set - is setting up a variable from within our app
 
 //setup ViewEngine as EJS *****/////////
-app.set('views', path.join(__dirname, '/app/views') ); // from server.js to app to views
+app.set('views', path.join(__dirname, 'app/views') ); // from server.js to app to views
 app.set('view engine', 'ejs'); // app.set (<the setting>, <value>)  
 
 
@@ -68,7 +67,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, '/client'))); // static content stays here
+// app.use(express.static(path.join(__dirname, '/client'))); // Everything on the client and public folder(as the line below) are static files
+app.use(express.static(path.join(__dirname, '/public')))
 app.use(session({                                         // DOnt keep session informatio in between executions (best Practices)
     secret:'MySecret',
     saveUninitialized: false,
@@ -81,3 +81,4 @@ app.use('/', indexRouter); // from this server .js file, we import the routing l
 
 
 app.listen(3000,'10.0.0.39'); // this is how we move code to meet horizontal structure design and wire all up
+
