@@ -1,6 +1,6 @@
 // {*********//} always use this code signified by this
 
-// Import Third Party Modules after installling them using npm
+// Import Third Party Modules after installling them using npm ****************///////
 import express from 'express';// imports full content of express into the .js file (do not use ***{express}***)
 import logger from 'morgan';
 import session from 'express-session';
@@ -11,7 +11,7 @@ import path, {dirname} from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Import routes
+// Import routes ************///////
 import indexRouter from './app/routes/index.route.server.js'; // called indexRouter (name can be anyting) because it is the only thing that we are exporting from routes folder.
 
 
@@ -58,7 +58,7 @@ const app = express();//assgning its fucntionailty to tha app constant so we can
 // app.set - is setting up a variable from within our app
 
 //setup ViewEngine as EJS *****/////////
-app.set('views', path.join(__dirname, 'app/views') ); // from server.js to app to views
+app.set('views', path.join(__dirname, 'app/views') ); // from server.js to app folder to views folder
 app.set('view engine', 'ejs'); // app.set (<the setting>, <value>)  
 
 
@@ -68,7 +68,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 
 // app.use(express.static(path.join(__dirname, '/client'))); // Everything on the client and public folder(as the line below) are static files
-app.use(express.static(path.join(__dirname, '/public')))
+app.use(express.static(path.join(__dirname, '/public'))) // This is the code that makes the folder 'public' static so that it can be rendered in client end
 app.use(session({                                         // DOnt keep session informatio in between executions (best Practices)
     secret:'MySecret',
     saveUninitialized: false,

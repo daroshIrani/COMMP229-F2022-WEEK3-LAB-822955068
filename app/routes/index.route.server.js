@@ -1,5 +1,5 @@
 import { Router } from "express"; // Import the router component from ES -- no need to install full express module here just the Router logic from ES
-import { displayhomePage} from "../controllers/index.controller.server.js"; // import the function that will be route the controller which will set the data on the page
+import { displayhomePage, displayservicesPage, displaycontactPage, displayprojectsPage, displayaboutPage} from "../controllers/index.controller.server.js"; // import the function that will be route the controller which will set the data on the page
 // import { helloWorldHtml } from "../controllers/index.controller.server.js"; // auto complete completes the same way for line 2 as it does 3 and 4
 // import { helloWorldJSON } from "../controllers/index.controller.server.js"; // remember to add '.js' at the end of the lines because VSCode has to recognize the file as '.js'
 // import {helloWorld} from "../controllers/index.controller.server.js";
@@ -14,6 +14,11 @@ const router = Router(); // instantiate router const representing router logic
 
 
 router.get('/', displayhomePage);
+router.get('/home', displayhomePage);
+router.get('/services', displayservicesPage);
+router.get('/about', displayaboutPage);
+router.get('/contact', displaycontactPage);
+router.get('/projects', displayprojectsPage);
 
 export default router; // exports the router in 'router.use' comands so they can be read by the rest of the folder whenver needed -- default allows us to 
                        // name it as any name in the server.js file 
