@@ -6,6 +6,9 @@ import logger from 'morgan';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 
+// Import Secret variable from config file 
+import { Secret } from './config/config.js';
+
 //ES Modules fix for __dirname ******///////
 import path, {dirname} from 'path';
 import { fileURLToPath } from 'url';
@@ -69,8 +72,9 @@ app.use(cookieParser());
 
 // app.use(express.static(path.join(__dirname, '/client'))); // Everything on the client and public folder(as the line below) are static files
 app.use(express.static(path.join(__dirname, '/public'))) // This is the code that makes the folder 'public' static so that it can be rendered in client end
-app.use(session({                                         // DOnt keep session informatio in between executions (best Practices)
-    secret:'MySecret',
+
+app.use(session({                                         // Our session is encrypted so any variables created in the session will be encrypted and since this session is on the
+    secret: Secret,                                    // server side, noone will be able to decryot the token from the client, - thats the purpose
     saveUninitialized: false,
     resave:false
 }));
