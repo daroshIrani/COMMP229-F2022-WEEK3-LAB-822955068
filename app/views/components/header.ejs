@@ -1,3 +1,4 @@
+<!-- reusable components that will be on oevery page within views folder saved here -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Darosh</a>
@@ -7,7 +8,8 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link <%=(page == 'home') ? 'active' : ''; %>" aria-current="page" href="/home"><i class="fa-regular fa-user"></i> Home</a> <!--TheEJS include statement goes inside the class. It means
+            <a class="nav-link <%=(page == 'home') ? 'active' : ''; %>" aria-current="page" href="/home"><i class="fa-regular fa-user"></i> Home</a> <!--TheEJS include 
+                                                                                                                    statement goes inside the class. It means
                                                                                                                     if the page (variable defined in index.controller.server.js)
                                                                                                                     is = home then make it the active page(url has index/home),
                                                                                                                      if not make it blank and load index page-->

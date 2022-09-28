@@ -65,13 +65,14 @@ app.set('views', path.join(__dirname, 'app/views') ); // from server.js to app f
 app.set('view engine', 'ejs'); // app.set (<the setting>, <value>)  
 
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-app.use(cookieParser());
+// app.use(logger('dev'));
+// app.use(express.json());
+// app.use(express.urlencoded({extended:false}));
+// app.use(cookieParser());
 
 // app.use(express.static(path.join(__dirname, '/client'))); // Everything on the client and public folder(as the line below) are static files
-app.use(express.static(path.join(__dirname, '/public'))) // This is the code that makes the folder 'public' static so that it can be rendered in client end
+app.use(express.static(path.join(__dirname, '/public'))) // This is the code that makes the folder 'public' static so that it can be rendered in client end -- all of espresses
+                                                            // statiuc content will start from the folder 'public'(public as named here in this case, could be called anthing)
 
 app.use(session({                                         // Our session is encrypted so any variables created in the session will be encrypted and since this session is on the
     secret: Secret,                                    // server side, noone will be able to decryot the token from the client, - thats the purpose

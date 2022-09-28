@@ -1,3 +1,4 @@
+<!--Index file under views stores the template for static pages-->
 <html>
     <head>
         <Title><%= title %></Title> <!-- to use variables its the %'=' to include variable coming from the render method in index.controller.server.js file -->
@@ -26,6 +27,7 @@
 
         <!-- Main -->
         <Main>
+            
             <%- include('content/' + page + '.ejs'); %> <!--we are now 'including' (which is actually a fn in js) parameters content + concantenating 'page' variable from index.js
                                                         + 'ejs' extension --- this way we reload from the content folder the content in each page.ejs we save to the template in 
                                                         this index.ejs file-->
