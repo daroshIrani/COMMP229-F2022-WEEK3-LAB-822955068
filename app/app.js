@@ -82,7 +82,7 @@ app.use(session({                                         // Our session is encr
 
 
 // Use Routes
-app.use('/', indexRouter); // from this server .js file, we import the routing logic whihc is stored in routes, then from routes we import the controller functions (logic) stored in controllers 
+app.use('/', indexRouter); // from this app.js file, we import the routing logic whihc is stored in routes, then from routes we import the controller functions (logic) stored in controllers 
 
 
 // app.listen(3000,'10.0.0.39'); // this is how we move code to meet horizontal structure design and wire all up
