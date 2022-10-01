@@ -70,7 +70,7 @@ app.set('view engine', 'ejs'); // app.set (<the setting>, <value>)
 // app.use(express.urlencoded({extended:false}));
 // app.use(cookieParser());
 
-// app.use(express.static(path.join(__dirname, '/client'))); // Everything on the client and public folder(as the line below) are static files
+// app.use(express.static(path.join(__dirname, '/client'))); // Everything on the client (changed to public) and public folder(as the line below) are static files
 app.use(express.static(path.join(__dirname, '../public'))) // This is the code that makes the folder 'public' static so that it can be rendered in client end -- all of espresses
                                                             // statiuc content will start from the folder 'public'(public as named here in this case, could be called anthing)
 
